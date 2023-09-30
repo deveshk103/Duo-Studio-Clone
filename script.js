@@ -48,9 +48,9 @@ init();
 
 var crsr = document.querySelector(".cursor")
 var main = document.querySelector(".main")
-main.addEventListener("mousemove",function(dets){
-    crsr.style.left = dets.x +10+ "px"
-    crsr.style.top = dets.y +10+"px"
+document.addEventListener("mousemove",function(dets){
+    crsr.style.left = dets.x +20+ "px"
+    crsr.style.top = dets.y +20+"px"
 })
 
 var video = document.querySelectorAll('video');
@@ -65,8 +65,8 @@ video.forEach(function(elem) {
     
     elem.addEventListener("mouseleave", function(){
         crsr.innerHTML = '';
-        crsr.style.width = '50px';
-        crsr.style.height = '50px';
+        crsr.style.width = '20px';
+        crsr.style.height = '20px';
         crsr.style.borderRadius = '50%';
     })
 })
@@ -140,9 +140,22 @@ boxes.forEach(function(elem){
     })
     elem.addEventListener("mouseleave",function(){
         // elem.style.backgroundColor = "transparent"
-        crsr.style.width = "50px"
-        crsr.style.height = "50px"
+        crsr.style.width = "20px"
+        crsr.style.height = "20px"
         crsr.style.borderRadius = "50%"
         crsr.style.backgroundImage = `none`
+    })
+})
+
+var h4 = document.querySelectorAll("#nav h4")
+var purple = document.querySelector("#purple")
+h4.forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        purple.style.display = "block"   
+        purple.style.opacity = "1"
+    })
+    elem.addEventListener("mouseleave",function(){
+        purple.style.display = "none"   
+        purple.style.opacity = "0"
     })
 })
